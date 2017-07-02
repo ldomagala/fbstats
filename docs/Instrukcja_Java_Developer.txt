@@ -1,0 +1,40 @@
+Cześć,
+ 
+Twoim zadaniem jest stworzenie prostego projektu umożliwiającego pobieranie podstawowych informacji o profilach Facebooka. 
+ 
+Nie martw się, nie będziesz musiał/a zakładać żadnych kont i korzystać z zewnętrznego API - w załączniku znajdziesz profile w formacie JSON.
+ 
+Przygotowaliśmy też interfejs, który prosimy abyś zaimplementował/a: 
+ 
+public interface FacebookService {
+	/**
+	* Zwraca obiekt reprezentujący profil Facebooka na podstawie id
+     * w czasie logarytmicznym
+	*/
+	Facebook findById(String id) throws NotFoundException;
+
+	/**
+	* Zwraca mapę której kluczem jest słowo a wartością liczba jego
+     * wystąpień - pod uwagę brane są wszystkie posty      
+	*/
+	Map<String, Long> findMostCommonWords();
+
+	/**
+	* Zwraca zbiór id Postów zawierających słowo word
+	*/
+	Set<String> findPostIdsByKeyword(String word);
+
+	/**
+     * Zwraca zbiór obiektów reprezentujących profile Facebooka
+     * posortowane po firstname, lastname
+	*/
+	Set<Facebook> findAll();
+}
+ 
+Dodatkowe wymagania i informacje:
+1. Projekt powinien zostać utworzony za pomocą Mavena.
+2. Kod powinien zostać umieszczony jako repozytorium Git i umieszczony w serwisie Github (swoim prywatnym – proszę w mailu przesłać adres). 
+3. Do wykonania projektu nie używaj żadnej bazy danych.
+4. Zachęcamy do użycia Javy 8.
+5. Nie musisz tworzyć testów (choć w naszym projekcie bardzo je doceniamy)
+6. Wykorzystanie zewnętrznych bibliotek jest dozwolone.

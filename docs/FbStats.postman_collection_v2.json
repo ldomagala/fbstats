@@ -1,0 +1,86 @@
+{
+	"variables": [],
+	"info": {
+		"name": "FbStats",
+		"_postman_id": "5d1be4f0-2676-3ae4-f549-cf72c8237b79",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "profile/1 - existing profile",
+			"request": {
+				"url": "http://localhost:8080/fbstats/profile/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "profiles",
+			"request": {
+				"url": "http://localhost:8080/fbstats/profiles",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "word-statistics",
+			"request": {
+				"url": "http://localhost:8080/fbstats/post-search/word-statistics",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "post-search",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8080/fbstats/post-search?keyword=televisions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"fbstats",
+						"post-search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "televisions",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "profile/1 - non-existing profile",
+			"request": {
+				"url": "http://localhost:8080/fbstats/profile/9999",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
