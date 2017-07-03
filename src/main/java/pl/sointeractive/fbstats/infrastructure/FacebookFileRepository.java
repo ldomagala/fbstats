@@ -12,6 +12,7 @@ import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.Assert;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -39,6 +40,8 @@ public class FacebookFileRepository implements FacebookRepository {
 
 	@Override
 	public Optional<Facebook> getById(String facebookId) {
+		Assert.hasLength(facebookId,"facebookId cannot be empty");
+
 		String facebookFilename = getFacebookFilenameForId(facebookId);
 		return Optional.of(Paths.get(facebookFilesDirectoryPath,facebookFilename))
 			.map(Path::toFile)

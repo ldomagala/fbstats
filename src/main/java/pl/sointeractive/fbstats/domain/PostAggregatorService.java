@@ -5,5 +5,5 @@ import java.util.stream.Stream;
 
 public interface PostAggregatorService {
 	Map<String,Long> countWordsInPosts(Stream<Post> posts);
-	Stream<Post> findPostsByKeyword(String word, Stream<Post> posts);
+	Stream<Post> findPostsByKeyword(String keyword, Stream<Post> posts);
 }

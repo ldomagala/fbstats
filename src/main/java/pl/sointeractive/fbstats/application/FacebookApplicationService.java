@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import pl.sointeractive.fbstats.application.exceptions.NotFoundException;
 import pl.sointeractive.fbstats.domain.Facebook;
@@ -28,8 +29,10 @@ public class FacebookApplicationService implements FacebookService {
 	private PostAggregatorService postAggregatorService;
 
 	@Override
-	public Facebook findById(String id) throws NotFoundException {
-		return facebookRepository.getById(id)
+	public Facebook findById(String facebookId) throws NotFoundException {
+		Assert.hasLength(facebookId,"facebookId cannot be empty");
+
+		return facebookRepository.getById(facebookId)
 			.orElseThrow(NotFoundException::new);
 	}
 
@@ -41,12 +44,14 @@ public class FacebookApplicationService implements FacebookService {
 	}
 
 	@Override
-	public Set<String> findPostIdsByKeyword(String word) {
+	public Set<String> findPostIdsByKeyword(String keyword) {
+		Assert.hasLength(keyword,"keyword cannot be empty");
+
 		Stream<Post> posts = facebookRepository.getAll().stream()
 			.flatMap(facebook -> facebook.getPosts().stream());
 
 		return postAggregatorService
-			.findPostsByKeyword(word, posts)
+			.findPostsByKeyword(keyword, posts)
 			.map(Post::getId)
 			.collect(Collectors.toSet());
 	}

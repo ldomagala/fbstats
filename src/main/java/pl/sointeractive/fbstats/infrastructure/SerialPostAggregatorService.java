@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.Assert;
 
 import pl.sointeractive.fbstats.domain.Post;
 import pl.sointeractive.fbstats.domain.PostAggregatorService;
@@ -35,12 +36,14 @@ public class SerialPostAggregatorService implements PostAggregatorService {
 	}
 
 	@Override
-	public Stream<Post> findPostsByKeyword(String word, Stream<Post> posts){
+	public Stream<Post> findPostsByKeyword(String keyword, Stream<Post> posts){
+		Assert.hasLength(keyword,"keyword cannot be empty");
+
 		return posts
 			.filter(post -> post
 					.getMessage()
 					.toLowerCase()
-					.matches(".*\\b"+word.toLowerCase()+"\\b.*"));
+					.matches(".*\\b"+keyword.toLowerCase()+"\\b.*"));
 	}
 
 }

@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import org.springframework.util.Assert;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -39,6 +40,8 @@ public class LogTimeFullPreloadFacebookCache implements FacebookRepository {
 
 	@Override
 	public Optional<Facebook> getById(String facebookId) {
+		Assert.hasLength(facebookId,"facebookId cannot be empty");
+
 		return Optional.ofNullable(
 			facebookDictionary.get(facebookId));
 	}
