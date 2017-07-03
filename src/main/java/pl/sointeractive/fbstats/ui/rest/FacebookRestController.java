@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import pl.sointeractive.fbstats.application.FacebookService;
+import pl.sointeractive.fbstats.application.exceptions.NotFoundException;
 import pl.sointeractive.fbstats.domain.Facebook;
 
 @RestController
@@ -21,7 +22,7 @@ public class FacebookRestController {
 	private  FacebookService facebookService;
 
 	@RequestMapping(value = "/profile/{facebookId}", produces = "application/json", method = RequestMethod.GET)
-	public Facebook profile(@PathVariable String facebookId){
+	public Facebook profile(@PathVariable String facebookId) throws NotFoundException {
 		return facebookService.findById(facebookId);
 	}
 
