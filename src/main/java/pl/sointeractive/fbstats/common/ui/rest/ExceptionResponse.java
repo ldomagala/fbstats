@@ -1,4 +1,4 @@
-package pl.sointeractive.fbstats.ui.rest;
+package pl.sointeractive.fbstats.common.ui.rest;
 
 public class ExceptionResponse
 {

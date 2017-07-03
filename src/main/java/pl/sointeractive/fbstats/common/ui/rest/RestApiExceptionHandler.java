@@ -1,4 +1,4 @@
-package pl.sointeractive.fbstats.ui.rest;
+package pl.sointeractive.fbstats.common.ui.rest;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

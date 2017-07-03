@@ -28,13 +28,14 @@ mvnw spring-boot:run
 
 ```
 
-# Test
+# Przykładowe wywołania API
 ``` bash
 curl http://localhost:8080/fbstats/profile/1
 curl http://localhost:8080/fbstats/profile/999
 curl http://localhost:8080/fbstats/profiles
-curl http://localhost:8080/fbstats/post-search?keyword=televisions
 curl http://localhost:8080/fbstats/word-statistics
+curl http://localhost:8080/fbstats/post-search?keyword=televisions
+
 
 ```
 
