@@ -15,7 +15,7 @@ import pl.sointeractive.fbstats.domain.Post;
 public class FacebookFileRepositoryTest {
 
 	private FacebookFileRepository facebookFileRepository;
-	private static String VALID_FACEBOOK_FILES_DIRECTORY_PATH = "./src/test/resources/facebook-files";
+	private static final String VALID_FACEBOOK_FILES_DIRECTORY_PATH = "./src/test/resources/facebook-files";
 
 	@Before
 	public void setUp(){

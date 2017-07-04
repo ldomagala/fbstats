@@ -31,8 +31,8 @@ public class LogTimeFullPreloadFacebookCacheTest {
 	@InjectMocks
 	private LogTimeFullPreloadFacebookCache logTimeFullPreloadFacebookCache;
 
-	private static int FACEBOOK_ID_RANGE_START = 1;
-	private static int FACEBOOK_ID_RANGE_END = 5;
+	private static final int FACEBOOK_ID_RANGE_START = 1;
+	private static final int FACEBOOK_ID_RANGE_END = 5;
 
 	@Before
 	public void setUp(){
@@ -68,7 +68,6 @@ public class LogTimeFullPreloadFacebookCacheTest {
 	}
 
 	private Facebook createMockFacebookProfile(int id){
-		Facebook facebook = new Facebook(Integer.toString(id), "DummyName","DummySurname");
-		return facebook;
+		return new Facebook(Integer.toString(id), "DummyName","DummySurname");
 	}
 }

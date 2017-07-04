@@ -6,7 +6,6 @@ import static org.mockito.Mockito.when;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -26,11 +25,6 @@ public class FacebookApplicationServiceTest {
 
 	@InjectMocks
 	private FacebookApplicationService facebookApplicationService;
-
-	@Before
-	public void setUp() throws Exception {
-
-	}
 
 
 	@Test
@@ -62,7 +56,7 @@ public class FacebookApplicationServiceTest {
 	}
 
 
-	private void addSampleFacebook(List facefookProfiles, String id, String firstName, String lastName){
+	private void addSampleFacebook(List<Facebook> facefookProfiles, String id, String firstName, String lastName){
 		Facebook facebook = new Facebook(id, firstName, lastName);
 		facefookProfiles.add(facebook);
 	}

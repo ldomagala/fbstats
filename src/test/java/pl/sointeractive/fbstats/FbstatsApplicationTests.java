@@ -9,6 +9,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class FbstatsApplicationTests {
 
+	@SuppressWarnings("EmptyMethod")
 	@Test
 	public void contextLoads() {
 	}

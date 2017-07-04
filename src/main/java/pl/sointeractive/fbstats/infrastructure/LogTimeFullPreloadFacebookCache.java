@@ -28,7 +28,7 @@ public class LogTimeFullPreloadFacebookCache implements FacebookRepository {
 	@Qualifier("facebookFileRepository")
 	private FacebookRepository facebookRepository;
 
-	private TreeMap<String,Facebook> facebookDictionary = Maps.newTreeMap();
+	private final TreeMap<String,Facebook> facebookDictionary = Maps.newTreeMap();
 
 	@PostConstruct
 	private void preloadCacheWithAllFacebookProfiles(){

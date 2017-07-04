@@ -30,9 +30,9 @@ public class FacebookRestControllerTest {
 
 	private MockMvc mockMvc;
 
-	private static String EXISTING_FACEBOOK_ID = "123";
-	private static String EXISTING_FACEBOOK_NAME = "SomeName";
-	private static String NON_EXISTING_FACEBOOK_ID = "999";
+	private static final String EXISTING_FACEBOOK_ID = "123";
+	private static final String EXISTING_FACEBOOK_NAME = "SomeName";
+	private static final String NON_EXISTING_FACEBOOK_ID = "999";
 
 	@Mock
 	private FacebookApplicationService facebookApplicationService;

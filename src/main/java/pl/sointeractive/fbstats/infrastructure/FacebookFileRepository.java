@@ -25,9 +25,9 @@ public class FacebookFileRepository implements FacebookRepository {
 	@Value("${facebook.directory.path}")
 	private String facebookFilesDirectoryPath;
 
-	private ObjectMapper objectMapper;
-	private static String FACEBOOK_FILE_NAME_PREFIX = "f";
-	private static String FACEBOOK_FILE_NAME_EXTENSION = ".json";
+	private final ObjectMapper objectMapper;
+	private static final String FACEBOOK_FILE_NAME_PREFIX = "f";
+	private static final String FACEBOOK_FILE_NAME_EXTENSION = ".json";
 
 
 	public FacebookFileRepository() {
@@ -64,7 +64,7 @@ public class FacebookFileRepository implements FacebookRepository {
 				.filter(Files::isRegularFile)
 				.filter(p -> p.getFileName().toString().startsWith(FACEBOOK_FILE_NAME_PREFIX))
 				.filter(p -> p.getFileName().toString().endsWith(FACEBOOK_FILE_NAME_EXTENSION))
-				.map(p -> p.toFile());
+				.map(Path::toFile);
 
 		} catch (IOException e) {
 			throw new RuntimeException(e);

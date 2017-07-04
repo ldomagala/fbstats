@@ -61,9 +61,9 @@ public class SerialPostAggregatorServiceTest {
 		Set<Post> postsWithSo = serialPostAggregatorService.findPostsByKeyword("so", posts.stream())
 			.collect(Collectors.toSet());
 		Set<Post> postsWithIn = serialPostAggregatorService.findPostsByKeyword("in", posts.stream())
-			.collect(Collectors.toSet());;
+			.collect(Collectors.toSet());
 		Set<Post> postsWithYou = serialPostAggregatorService.findPostsByKeyword("You", posts.stream())
-			.collect(Collectors.toSet());;
+			.collect(Collectors.toSet());
 
 		//then
 		assertThat(postsWithSo).hasSize(2);

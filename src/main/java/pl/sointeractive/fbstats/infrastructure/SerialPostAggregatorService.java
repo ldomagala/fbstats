@@ -17,9 +17,9 @@ import pl.sointeractive.fbstats.domain.PostAggregatorService;
 @Service
 public class SerialPostAggregatorService implements PostAggregatorService {
 
-	private static String REMOVE_PUNCTUATION_REGEX="[,.!?():;$]";
-	private static String REMOVE_INTEGER_REGEX="^\\d+$";
-	private static String SPLIT_REGEX="[\\s/]";
+	private static final String REMOVE_PUNCTUATION_REGEX="[,.!?():;$]";
+	private static final String REMOVE_INTEGER_REGEX="^\\d+$";
+	private static final String SPLIT_REGEX="[\\s/]";
 
 	@Override
 	public Map<String,Long> countWordsInPosts(Stream<Post> posts){

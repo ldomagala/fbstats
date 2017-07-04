@@ -26,10 +26,9 @@ public class RestApiExceptionHandler {
 	}
 
 	private ExceptionResponse exceptionResponseFromException(Throwable ex) {
-		ExceptionResponse errorResponse = new ExceptionResponse(
+		return new ExceptionResponse(
 			ex.getClass().getSimpleName(),
 			ex.getMessage()
 		);
-		return errorResponse;
 	}
 }
